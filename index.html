@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorry Letter</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
+            animation: backgroundAnimation 10s infinite alternate;
+        }
+
+        @keyframes backgroundAnimation {
+            0% { background: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%); }
+            100% { background: linear-gradient(to right, #ff9a9e 0%, #fecfef 100%); }
+        }
+
+        h1, h2 {
+            color: #444;
+        }
+
+        #form, #letter {
+            display: none;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        #form input {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        #form button, #welcome button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ff7f50;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #form button:hover, #welcome button:hover {
+            background-color: #ff4500;
+        }
+
+        #letter p {
+            font-size: 18px;
+            color: #333;
+        }
+
+        #letter .gif-container {
+            margin: 20px 0;
+        }
+
+        #letter .gif-container img {
+            width: 200px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        #letter .sign-off {
+            font-weight: bold;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div id="welcome">
+        <center><h1>Good Morning<br>Chipkali 🥲</h1>
+        <button onclick="showForm()">Start</button></center>
+    </div>
+    <div id="form">
+        <h2>Please enter Your name: ❤️ </h2>
+        <input type="text" id="nameInput" placeholder="Her name">
+        <button onclick="generateLetter()">Continue</button>
+    </div>
+    <div id="letter">
+        <h2><font color=red><strong>Sorry Letter</strong></font></h2>
+        <p id="greeting"></p>
+        <div class="gif-container">
+            <img src="https://i.pinimg.com/originals/48/83/da/4883dac105f5ddca6122bdf901a5d92e.gif" alt="Sorry GIF">
+        </div>
+        <p>I'm deeply sorry for my actions and the hurt I may have caused. Please accept my heartfelt apology.</p>
+        <p>I value our friendship and hope you can forgive me.</p>
+        <p class="sign-off">With sincere apologies,</p>
+        <p class="sign-off"><font color=blue><b>Satyam..✨</b></font></p>
+    </div>
+
+    <script>
+        function showForm() {
+            document.getElementById('welcome').style.display = 'none';
+            document.getElementById('form').style.display = 'block';
+        }
+
+        function generateLetter() {
+            var name = document.getElementById('nameInput').value;
+            document.getElementById('greeting').innerText = 'Dear ' + name + ',';
+            document.getElementById('form').style.display = 'none';
+            document.getElementById('letter').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
